@@ -1,513 +1,1575 @@
 Windows Registry Editor Version 5.00
 
-;; =============================================================================================================================== ;;
-;; Winero Tweaks
-;; ========================================================== Appearance ========================================================= ;;
-;; not added Aero Lite
+;; [CU and LM] located in both 'Current User' and 'Local Machine'
+;; [CU] located in 'Current User'
+;; [LM] located in 'Local Machine'
 
-;; Alt+Tab Appearance
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MultitaskingView\AltTabViewHost]
-"Grid_backgroundPercent"=dword:00000046
-"BackgroundDimmingLayer_percent"=dword:00000000
-"Wallpaper"=dword:00000000
+;; ============= Privacy ============= ;;
 
-;; not added Colored Title Bars
-;; not added Custom Accents
-;; not added Dark Color Scheme
-;; not added Inactive Title Bars
-;; not added Slow Down Animations
+;; Disable and reset Advertising ID and info [CU and LM]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo]
+"Enabled"=dword:00000000
+;; "Enabled"=dword:00000001
+[HKLM\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo]
+"Enabled"=dword:00000000
+;; "Enabled"=dword:00000001
 
-;; Startup Sound
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\BootAnimation]
-"DisableStartupSound"=dword:00000001
 
-;; Theme Behavior
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes]
-"ThemeChangesDesktopIcons"=dword:00000001
-"ThemeChangesMousePointers"=dword:00000001
-"WallpaperSetFromTheme"=dword:00000001
-;; ================================================ Advanced Appearance Settings ================================================= ;;
-;; ========================================================== Behavior =========================================================== ;;
+;; Disable transmission of typing information [CU]
+;; y
+[HKCU\Software\Microsoft\Input\TIPC]
+"Enabled"=dword:00000000
+[HKLM\Software\Microsoft\Input\TIPC]
+"Enabled"=dword:00000000
 
-;; Ads and Unwanted Apps
-;; stop unwanted apps that windows installs automaticly
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
-"SilentInstalledAppsEnabled"=dword:00000000
-;; Start Menu Suggestions (without third party tool)
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
-"SystemPaneSuggestionsEnabled"=dword:00000000
-;; Disable Ads in File Explorer
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"ShowSyncProviderNotifications"=dword:00000000
-;; Tips about Windows
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
-"SoftLandingEnabled"=dword:00000000
-;; Spotlight and Lockscreen Ads
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
-"RotatingLockScreenEnabled"=dword:00000000
-"RotatingLockScreenOverlayEnabled"=dword:00000000
-;; Welcome Experience (Let's finish setting up your device)
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement]
-"ScoobeSystemSettingEnabled"=dword:00000000
-;; Tailored Experiences
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Privacy]
-"TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
-;; The rest
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
-"FeatureManagementEnabled"=dword:00000000
-"OemPreInstalledAppsEnabled"=dword:00000000
-"PreInstalledAppsEnabled"=dword:00000000
-"SlideshowEnabled"=dword:00000000
-"ContentDeliveryAllowed"=dword:00000000
-"PreInstalledAppsEverEnabled"=dword:00000000
+
+;; Disable suggetions in the timeline [CU]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
 "SubscribedContent-353698Enabled"=dword:00000000
+[HKLM\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"SubscribedContent-353698Enabled"=dword:00000000
+
+
+;; Disable suggetions in start [CU]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
 "SubscribedContent-338388Enabled"=dword:00000000
+[HKLM\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"SubscribedContent-338388Enabled"=dword:00000000
+
+
+;; Disable tips, tricks and suggestions when using Windows [CU]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
 "SubscribedContent-338389Enabled"=dword:00000000
+[HKLM\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"SubscribedContent-338389Enabled"=dword:00000000
+
+
+;; Disable showing suggested content in the settings app [CU]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
 "SubscribedContent-338393Enabled"=dword:00000000
 "SubscribedContent-353694Enabled"=dword:00000000
 "SubscribedContent-353696Enabled"=dword:00000000
-"SubscribedContent-338387Enabled"=dword:00000000
-"SubscribedContent-314559Enabled"=dword:00000000
+[HKLM\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"SubscribedContent-338393Enabled"=dword:00000000
+"SubscribedContent-353694Enabled"=dword:00000000
+"SubscribedContent-353696Enabled"=dword:00000000
+
+
+;; Disable the possibility of suggesting to finish the setup of the device [CU]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
 "SubscribedContent-310093Enabled"=dword:00000000
-"SubscribedContent-314563Enabled"=dword:00000000
-"SubscribedContentEnabled"=dword:00000000
-"DisableWindowsSpotlightFeatures"=dword:00000001
-"DisableTailoredExperiencesWithDiagnosticData"=dword:00000001
-
-;; not added Automatic Registry Backup
-
-;; Disable Aero Shake
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"DisallowShaking"=dword:00000001
-
-;; not added Aero Snap
-
-;; Disable App Lookup in Store - "Look for an App in Microsoft Store".
-[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer]
-"NoUseStoreOpenWith"=-
-[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Explorer]
-"NoUseStoreOpenWith"=dword:00000001
-
-;; Disable Automatic Maintenance
-;; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Maintenance]
-;; "MaintenanceDisabled"=dword:00000001
-
-;; Disable Downloads Blocking (SmartScreen Popup)
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments]
-"SaveZoneInformation"=dword:00000001
-
-;; not added Disable Driver Updates
-
-;; Disable Malicious Software Removal Tool from installing cause its useless
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MRT]
-"DontOfferThroughWUAU"=dword:00000001
-
-;; Disable SmartScreen - For Explorer (Windows), Edge, Store Apps
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
-"SmartScreenEnabled"="Off"
-[HKEY_CURRENT_USER\Software\Microsoft\Edge\SmartScreenEnabled]
-@=dword:00000000
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\AppHost]
-"EnableWebContentEvaluation"=dword:00000000
-"PreventOverride"=dword:00000000
-
-;; Disable Timeline
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
-"EnableActivityFeed"=dword:00000000
-
-;; not added Disable User Folder Backup to OneDrive
-;; Disable Windows Update - custom.reg
-;; not added Enable Crash on Ctrl+Scroll Lock
-
-;; Enable Emoji Picker [Win + .]
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Input\Settings]
-"EnableExpressiveInputShellHotkey"=dword:00000001
-
-;; Disable Error Reporting
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting]
-"Disabled"=dword:00000001
-
-;; Keep Thumbnail Cache
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Thumbnail Cache]
-"Autorun"=dword:00000001
-
-;; Menu Show Delay in miliseconds
-[HKEY_CURRENT_USER\Control Panel\Desktop]
-"MenuShowDelay"="50"
-
-;; Disable New Apps Notification - "you have new apps that can open this type of file"
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer]
-"NoNewAppAlert"=dword:00000001
-
-;; not added Redefine Extra Keys oN Keyboard
-
-;; ScreenSaver Grace Period 0-2147483 seconds (5 is default)
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
-"ScreenSaverGracePeriod"=dword:00000005
-
-;; Show BSOD, Disable Smiley
-[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\CrashControl]
-"DisplayParameters"=dword:00000001
-
-;; Sound for Print Screen key - Disabled
-[HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SnapShot]
-@=-
-
-;; not added Split Threshhold for Svchost
-;; not added USB Write Protection
-
-;; Enable Windows Installer/Uninstaller in Safe Mode
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\MSIServer]
-@="Service"
-
-;; not added XMouse Options
-;; ======================================================= Boot and Logon ======================================================= ;;
-;; Auto Repair on boot - disabled - winero.bat
-;; not added Boot Options
-
-;; Chddsk Timeout at Boot
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager]
-"AutoChkTimeout"=dword:00000008
-
-;; not added Default Lock Screen Background
-
-;; Disable "Let’s finish setting up your device"
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+[HKCU\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement]
+"ScoobeSystemSettingEnabled"=dword:00000000
+[HKLM\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
 "SubscribedContent-310093Enabled"=dword:00000000
-"SubscribedContent-338389Enabled"=dword:00000000
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement]
+[HKLM\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement]
 "ScoobeSystemSettingEnabled"=dword:00000000
 
-;; not added Disable Blur on Sign-in Screen
 
-;; Disable Lock Screen
-;; [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement]
-;; "AllowLockScreen"=dword:00000000
+;; Disable app notifications [CU]
+;; n
+[HKCU\Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications]
+;; "NoToastApplicationNotification"=dword:00000001
+"NoToastApplicationNotification"=-
+[HKCU\Software\Microsoft\Windows\CurrentVersion\PushNotifications]
+;; "ToastEnabled"=dword:00000000
+"ToastEnabled"=-
+[HKLM\Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications]
+;; "NoToastApplicationNotification"=dword:00000001
+"NoToastApplicationNotification"=-
+[HKLM\Software\Microsoft\Windows\CurrentVersion\PushNotifications]
+;; "ToastEnabled"=dword:00000000
+"ToastEnabled"=-
 
-;; Enable CTRL + ALT + DEL logon requirement
-;; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
-;; "DisableCAD"=dword:00000000
 
-;; Enable Numlock on Logon screen
-[HKEY_USERS\.DEFAULT\Control Panel\Keyboard]
-"InitialKeyboardIndicators"=dword:2147483650
+;; Disable access to local language for browsers [CU]
+;; n
+[HKCU\Control Panel\International\User Profile]
+;; "HttpAcceptLanguageOptOut"=dword:00000001
+"HttpAcceptLanguageOptOut"=-
+[HKLM\Control Panel\International\User Profile]
+;; "HttpAcceptLanguageOptOut"=dword:00000001
+"HttpAcceptLanguageOptOut"=-
 
-;; not added Enable User Auto Logon Checkbox
-;; not added Find Lock Screen Images
+;; Disable text suggestions when typing on the software keyboard (touch keyboard) [CU]
+;; y
+[HKCU\Software\Microsoft\TabletTip\1.7]
+;; "EnableTextPrediction"=dword:00000000
+"EnableTextPrediction"=-
+[HKLM\Software\Microsoft\TabletTip\1.7]
+;; "EnableTextPrediction"=dword:00000000
+"EnableTextPrediction"=-
 
-;; Don't Display Last Login User Name - really annoying if you have a long username
-;; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
-;; "dontdisplaylastusername"=dword:00000001
 
-;; Lock Screen Slideshow Duration
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lock Screen]
-"SlideshowDuration"=dword:00000000
+;; Disable sending urls from apps to the windows store (ms-windows-store://) [CU]
+;; n
+[HKCU\Software\Microsoft\Windows\CurrentVersion\AppHost]
+;; "EnableWebContentEvaluation"=dword:00000000
+"EnableWebContentEvaluation"=-
+[HKLM\Software\Microsoft\Windows\CurrentVersion\AppHost]
+;; "EnableWebContentEvaluation"=dword:00000000
+"EnableWebContentEvaluation"=-
 
-;; not added: Disable logon screen background image
-;; not added: Disable the Network icon on Lock Screen
-;; not added: Disable the POwer Button on Login Screen
-;; not added: Show Last Logon Info
-;; Sign in Message
-;; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
-;; "legalnoticecaption"="Hello from Organization"
-;; "legalnoticetext"="Sample message by https://google.com."
-;; Verbose Login Messages; 
-;; Preparing Windows, Running Tasks, ect..; below spinning circle
-;; [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System]
-;; "VerboseStatus"=dword:00000001
-;; ===================================================== Desktop and Taskbar ===================================================== ;;
-;; disable live tiles - makes tiles not have images
-[HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications]
-"NoTileApplicationNotification"=dword:00000001
 
-;; disable web search - also disables cortana
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
-"AllowCloudSearch"=dword:00000000
-"AllowCortana"=dword:00000000
-"AllowCortanaAboveLock"=dword:00000000
-"AllowSearchToUseLocation"=dword:00000000
+;; -----------------------------------------------------;;
+;; Disable Sharing of handwritting data [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\TabletPC]
+"PreventHandwritingDataSharing"=dword:00000001
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\TabletPC]
+"PreventHandwritingDataSharing"=dword:00000001
+
+
+;; Disable sharing of handwriting error reports [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\HandwritingErrorReports]
+"PreventHandwritingErrorReports"=dword:00000001
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\HandwritingErrorReports]
+"PreventHandwritingErrorReports"=dword:00000001
+
+
+;; Disable Inventory Collector [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\AppCompat]
+"DisableInventory"=dword:00000001
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\AppCompat]
+"DisableInventory"=dword:00000001
+
+
+;; Disable camera logon screen [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\Personalization]
+"NoLockScreenCamera"=dword:00000001
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\Personalization]
+"NoLockScreenCamera"=dword:00000001
+
+
+;; Disable advertisements via Bluetooth [LM]
+;; y
+[HKCU\SOFTWARE\Microsoft\PolicyManager\current\device\Bluetooth]
+"AllowAdvertising"=dword:00000000
+[HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\Bluetooth]
+"AllowAdvertising"=dword:00000000
+
+
+;; Disable the Windows Customer Experience Improvement Program [LM]
+;; y
+[HKCU\SOFTWARE\Microsoft\SQMClient\Windows]
+"CEIPEnable"=dword:00000000
+;; "CEIPEnable"=dword:00000001
+[HKLM\SOFTWARE\Microsoft\SQMClient\Windows]
+"CEIPEnable"=dword:00000000
+;; "CEIPEnable"=dword:00000001
+
+
+;; Disable backup of text messages into the cloud [LM]
+;; n
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\Messaging]
+;; "AllowMessageSync"=dword:00000000
+"AllowMessageSync"=dword:00000001
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\Messaging]
+;; "AllowMessageSync"=dword:00000000
+"AllowMessageSync"=dword:00000001
+
+
+;; Disable Windows Error Reporting [LM]
+;; y
+[HKCU\SOFTWARE\Microsoft\Windows\Windows Error Reporting]
+"Disabled"=dword:00000001
+[HKLM\SOFTWARE\Microsoft\Windows\Windows Error Reporting]
+"Disabled"=dword:00000001
+
+
+;; Disable biometrical features [LM]
+;; n
+[HKCU\SOFTWARE\Policies\Microsoft\Biometrics]
+;; "Enabled"=dword:00000000
+"Enabled"=dword:00000001
+[HKLM\SOFTWARE\Policies\Microsoft\Biometrics]
+;; "Enabled"=dword:00000000
+"Enabled"=dword:00000001
+
+
+;; ============= Activity History and Clipboard ============= ;;
+
+
+;; Disable storage of clipboard history [CU]
+;; y
+[HKCU\Software\Microsoft\Clipboard]
+"EnableClipboardHistory"=dword:00000000
+;; "EnableClipboardHistory"=-
+[HKLM\Software\Microsoft\Clipboard]
+"EnableClipboardHistory"=dword:00000000
+;; "EnableClipboardHistory"=-
+
+;; -----------------------------------------------------;;
+;; Disable Storage of Clipboard history for the whole machine [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\System]
+"AllowClipboardHistory"=dword:00000000
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\System]
+"AllowClipboardHistory"=dword:00000000
+
+
+;; Disable recordings of user activity [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\System]
+"EnableActivityFeed"=dword:00000000
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\System]
+"EnableActivityFeed"=dword:00000000
+
+
+;; Disable storing users' activity history [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\System]
+"PublishUserActivities"=dword:00000000
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\System]
+"PublishUserActivities"=dword:00000000
+
+
+;; Disable the submission of user activities to Microsoft [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\System]
+"UploadUserActivities"=dword:00000000
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\System]
+"UploadUserActivities"=dword:00000000
+
+
+;; Disable the transfer of clipboard history to other devices via the cloud [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\System]
+"AllowCrossDeviceClipboard"=dword:00000000
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\System]
+"AllowCrossDeviceClipboard"=dword:00000000
+
+
+
+;; ============= App Privacy ============= ;;
+
+;; Disable app access to user account information [CU and LM]
+;; y
+[HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userAccountInformation]
+"Value"="Deny"
+;; "Value"="Allow"
+[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userAccountInformation]
+"Value"="Deny"
+;; "Value"="Allow"
+
+
+;; Disable tracking of app starts [CU]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_TrackProgs"=dword:00000000
+;; "Start_TrackProgs"=-
+[HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_TrackProgs"=dword:00000000
+;; "Start_TrackProgs"=-
+
+
+;; Disable app access to diagnostic information [CU and LM]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\appDiagnostics]
+"Value"="Deny"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\appDiagnostics]
+"Value"="Deny"
+
+
+;; Disable app access to device location [CU and LM]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location]
+"Value"="Deny"
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location\NonPackaged]
+"Value"="Deny"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location]
+"Value"="Deny"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location\NonPackaged]
+"Value"="Deny"
+
+
+;; Disable app access to camera [CU and LM]
+;; n
+[HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam]
+"Value"="Allow"
+[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam]
+"Value"="Allow"
+
+
+;; Disable app access to microphone [CU and LM]
+;; n
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone]
+"Value"="Allow"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone]
+"Value"="Allow"
+
+
+;; Disable app access to voice activation (only when Speech recognition is enabled) [CU]
+;; n
+[HKCU\Software\Microsoft\Speech_OneCore\Settings\VoiceActivation\UserPreferenceForAllApps]
+;; "AgentActivationEnabled"=dword:00000000
+"AgentActivationEnabled"=dword:00000001
+[HKLM\Software\Microsoft\Speech_OneCore\Settings\VoiceActivation\UserPreferenceForAllApps]
+;; "AgentActivationEnabled"=dword:00000000
+"AgentActivationEnabled"=dword:00000001
+
+
+;; Disable app access to voice activation when the device is locked (only when Speech recognition is enabled) [CU]
+;; n
+[HKCU\Software\Microsoft\Speech_OneCore\Settings\VoiceActivation\UserPreferenceForAllApps]
+;; "AgentActivationOnLockScreenEnabled"=dword:00000000
+"AgentActivationOnLockScreenEnabled"=-
+[HKLM\Software\Microsoft\Speech_OneCore\Settings\VoiceActivation\UserPreferenceForAllApps]
+;; "AgentActivationOnLockScreenEnabled"=dword:00000000
+"AgentActivationOnLockScreenEnabled"=-
+
+
+;; Disable the standard app for the headset button (disables the button on certian headsets that restarts the last app when pressed) [CU]
+;; y
+[HKCU\Software\Microsoft\Speech_OneCore\Settings\VoiceActivation\UserPreferenceForAllApps]
+"AgentActivationLastUsed"=dword:00000000
+;; "AgentActivationLastUsed"=-
+[HKLM\Software\Microsoft\Speech_OneCore\Settings\VoiceActivation\UserPreferenceForAllApps]
+"AgentActivationLastUsed"=dword:00000000
+;; "AgentActivationLastUsed"=-
+
+
+;; Disable app access to notifications [CU and LM]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userNotificationListener]
+"Value"="Deny"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userNotificationListener]
+"Value"="Deny"
+
+
+;; Disable app access to movements (for devices that track thier rotation) [CU and LM]
+;; n
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\activity]
+"Value"="Allow"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\activity]
+"Value"="Allow"
+
+
+;; Disable app access to contacts [CU and LM]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\contacts]
+"Value"="Deny"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\contacts]
+"Value"="Deny"
+
+
+;; ;; Disable app access to calendar [CU and LM]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\appointments]
+"Value"="Deny"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\appointments]
+"Value"="Deny"
+
+
+;; Disable app access to phone calls [CU and LM]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\phoneCall]
+"Value"="Deny"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\phoneCall]
+"Value"="Deny"
+
+
+;; Disable app access to call history [CU and LM]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\phoneCallHistory]
+"Value"="Deny"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\phoneCallHistory]
+"Value"="Deny"
+
+
+;; Disable app access to email [CU and LM]
+;; n
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\email]
+"Value"="Allow"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\email]
+"Value"="Allow"
+
+
+;; Disable app access to tasks (task list feature) [CU and LM]
+;; n
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userDataTasks]
+"Value"="Deny"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userDataTasks]
+"Value"="Deny"
+
+
+;; Disable app access to messages [CU and LM]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\chat]
+"Value"="Deny"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\chat]
+"Value"="Deny"
+
+;; Disable app access to radios (tablet/phone devices usually) [CU and LM]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\radios]
+"Value"="Allow"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\radios]
+"Value"="Allow"
+
+;; Disable app access to unpaired devices [CU and LM]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\bluetoothSync]
+"Value"="Deny"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\bluetoothSync]
+"Value"="Deny"
+
+;; Disable app access to documents (documents folder) [CU and LM]
+;; n
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\documentsLibrary]
+"Value"="Allow"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\documentsLibrary]
+"Value"="Allow"
+
+;;  disable app access to images (images folder) [CU and LM]
+;; n
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\picturesLibrary]
+"Value"="Allow"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\picturesLibrary]
+"Value"="Allow"
+
+;; Disable app access to videos (images videos) [CU and LM]
+;; n
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\videosLibrary]
+"Value"="Allow"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\videosLibrary]
+"Value"="Allow"
+
+;; Disable app access to the file system (the whole filesystem) [CU and LM]
+;; n
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\broadFileSystemAccess]
+"Value"="Allow"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\broadFileSystemAccess]
+"Value"="Allow"
+
+;; Disable app access to eye tracking [CU and LM]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\gazeInput]
+"Value"="Deny"
+[HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\gazeInput]
+"Value"="Deny"
+
+
+;; Prohibit apps from running in the background [CU and LM]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
+"GlobalUserDisabled"=dword:00000001
+;; "GlobalUserDisabled"=dword:00000000
+[HKCU\Software\Microsoft\Windows\CurrentVersion\Search]
+"BackgroundAppGlobalToggle"=dword:00000000
+;; "BackgroundAppGlobalToggle"=-
+[HKLM\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
+"GlobalUserDisabled"=dword:00000001
+;; "GlobalUserDisabled"=dword:00000000
+[HKLM\Software\Microsoft\Windows\CurrentVersion\Search]
+"BackgroundAppGlobalToggle"=dword:00000000
+;; "BackgroundAppGlobalToggle"=-
+
+
+;; ============= Microsoft Edge (new version based on Chromium) ============= ;;
+
+
+;; Disable tracking in the web [CU and LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+"ConfigureDoNotTrack"=dword:00000001
+;; "ConfigureDoNotTrack"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+"ConfigureDoNotTrack"=dword:00000001
+;; "ConfigureDoNotTrack"=-
+
+
+;; Disable check for saved payment methods by sites [CU and LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+"PaymentMethodQueryEnabled"=dword:00000000
+;; "PaymentMethodQueryEnabled"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+"PaymentMethodQueryEnabled"=dword:00000000
+;; "PaymentMethodQueryEnabled"=-
+
+
+;; Disable personalizing advertising, search, news, and other services [CU and LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+"PersonalizationReportingEnabled"=dword:00000000
+;; "PersonalizationReportingEnabled"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+"PersonalizationReportingEnabled"=dword:00000000
+;; "PersonalizationReportingEnabled"=-
+
+
+;; Disable automatic completion of web addresses in address bar [CU and LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+"AddressBarMicrosoftSearchInBingProviderEnabled"=dword:00000000
+;; "AddressBarMicrosoftSearchInBingProviderEnabled"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+"AddressBarMicrosoftSearchInBingProviderEnabled"=dword:00000000
+;; "AddressBarMicrosoftSearchInBingProviderEnabled"=-
+
+
+;; Disable user feedback in toolbar [CU and LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+"UserFeedbackAllowed"=dword:00000000
+;; "UserFeedbackAllowed"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+"UserFeedbackAllowed"=dword:00000000
+;; "UserFeedbackAllowed"=-
+
+
+;; Disable storing and autocompleting of credit card data on websites [CU]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+"AutofillCreditCardEnabled"=dword:00000000
+;; "AutofillCreditCardEnabled"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+"AutofillCreditCardEnabled"=dword:00000000
+;; "AutofillCreditCardEnabled"=-
+
+
+;; Disable form suggestions [CU and LM]
+;; n
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+;; "AutofillAddressEnabled"=dword:00000000
+"AutofillAddressEnabled"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+;; "AutofillAddressEnabled"=dword:00000000
+"AutofillAddressEnabled"=-
+
+
+;; Disable suggestions from local providers [CU and LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+"LocalProvidersEnabled"=dword:00000000
+;; "LocalProvidersEnabled"=
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+"LocalProvidersEnabled"=dword:00000000
+;; "LocalProvidersEnabled"=-
+
+
+;; Disable search and website suggestions [CU and LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+"SearchSuggestEnabled"=dword:00000000
+;; "SearchSuggestEnabled"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+"SearchSuggestEnabled"=dword:00000000
+;; "SearchSuggestEnabled"=-
+
+
+;; Disable shopping assistant in Microsoft Edge [CU and LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+"EdgeShoppingAssistantEnabled"=dword:00000000
+;; "EdgeShoppingAssistantEnabled"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+"EdgeShoppingAssistantEnabled"=dword:00000000
+;; "EdgeShoppingAssistantEnabled"=-
+
+
+;; Disable Edge Bar [CU and LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+"WebWidgetAllowed"=dword:00000000
+;; "WebWidgetAllowed"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+"WebWidgetAllowed"=dword:00000000
+;; "WebWidgetAllowed"=-
+
+
+;; Disable Sidebar in Microsoft Edge [CU and LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+"HubsSidebarEnabled"=dword:00000000
+;; "HubsSidebarEnabled"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+"HubsSidebarEnabled"=dword:00000000
+;; "HubsSidebarEnabled"=-
+
+
+;; Disable use of web services to resolve navigation errors [CU and LM]
+;; n
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+;; "ResolveNavigationErrorsUseWebService"=dword:00000000
+"ResolveNavigationErrorsUseWebService"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+;; "ResolveNavigationErrorsUseWebService"=dword:00000000
+"ResolveNavigationErrorsUseWebService"=-
+
+
+;; Disable suggestion of simular sites when website cannot be found [CU and LM]
+;; n
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+;; "AlternateErrorPagesEnabled"=dword:00000000
+"AlternateErrorPagesEnabled"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+;; "AlternateErrorPagesEnabled"=dword:00000000
+"AlternateErrorPagesEnabled"=-
+
+
+;; Disable preload of pages for faster browsing and searching [CU and LM]
+;; n
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+"NetworkPredictionOptions"=dword:00000002
+;; "NetworkPredictionOptions"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+"NetworkPredictionOptions"=dword:00000002
+;; "NetworkPredictionOptions"=-
+
+;; Disable saving passwords for websites [CU and LM]
+;; n
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+;; "PasswordManagerEnabled"=dword:00000000
+"PasswordManagerEnabled"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+;; "PasswordManagerEnabled"=dword:00000000
+"PasswordManagerEnabled"=-
+
+
+;; Disable site safety services for more information about a visited website [CU and LM]
+;; n
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+;; "SiteSafetyServicesEnabled"=dword:00000000
+"SiteSafetyServicesEnabled"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+;; "SiteSafetyServicesEnabled"=dword:00000000
+"SiteSafetyServicesEnabled"=-
+
+
+;; Disable SmartScreen Filter [CU and LM]
+;; n
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+;; "SmartScreenEnabled"=dword:00000000
+"SmartScreenEnabled"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+;; "SmartScreenEnabled"=dword:00000000
+"SmartScreenEnabled"=-
+
+
+;; Disable Typosquatting checker for site addresses [CU and LM]
+;; n
+[HKCU\SOFTWARE\Policies\Microsoft\Edge]
+;; "TyposquattingCheckerEnabled"=dword:00000000
+"TyposquattingCheckerEnabled"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Edge]
+;; "TyposquattingCheckerEnabled"=dword:00000000
+"TyposquattingCheckerEnabled"=-
+
+
+;; ============= Microsoft Edge (legacy version) ============= ;;
+
+
+;; Disable tracking in the web (enable Do Not Track) [CU]
+;; y
+[HKLM\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\Main]
+"DoNotTrack"=dword:00000001
+;; "DoNotTrack"=-
+
+;; Disable page prediction (disable transmiting information to websites even though you did not visit them) [CU]
+;; y
+[HKLM\SOFTWARE\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\FlipAhead]
+"FPEnabled"=dword:00000000
+;; "FPEnabled"=-
+
+;; Disable search and website suggestions (disable sending search terms to microsoft) [CU]
+;; y
+[HKLM\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\Main]
+"ShowSearchSuggestionsGlobal"=dword:00000000
+;; "ShowSearchSuggestionsGlobal"=-
+
+;; Disable Cortana in Microsoft Edge [CU]
+;; y
+[HKLM\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\ServiceUI]
+"EnableCortana"=dword:00000000
+;; "EnableCortana"=-
+
+;; Disable showing search history [CU]
+;; y
+[HKLM\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\ServiceUI\ShowSearchHistory]
+@=dword:00000000
+;; @=""
+
+;; Disable form suggestions [CU]
+;; y
+[HKLM\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\Main]
+"Use FormSuggest"="no"
+;; "Use FormSuggest"=-
+
+;; Disable sites saving protected media licenses on my device [CU]
+;; y
+[HKLM\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\Privacy]
+"EnableEncryptedMediaExtensions"=dword:00000000
+;; "EnableEncryptedMediaExtensions"=-
+
+;; Disable sites saving protected media licenses on my device [CU]
+;; y
+[HKLM\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\Privacy]
+"EnableEncryptedMediaExtensions"=dword:00000000
+;; "EnableEncryptedMediaExtensions"=-
+
+;; Do not optimize web search results on task bar for screen reader [CU]
+;; y
+[HKLM\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\Main]
+"OptimizeWindowsSearchResultsForScreenReaders"=dword:00000000
+;; "OptimizeWindowsSearchResultsForScreenReaders"=-
+
+;; Disable Smart Screen Filter
+;; n
+[HKLM\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\PhishingFilter]
+"EnabledV9"=dword:00000004
+;; "EnabledV9"=-
+
+;; -----------------------------------------------------;;
+;; Disable automatic completion of web addresses in address bar (if enabled, disables the suggestions system entierly) [LM]
+;; n
+[HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\Browser]
+;; "AllowAddressBarDropdown"=dword:00000000
+"AllowAddressBarDropdown"=-
+
+;; Disable loading the start and the new tap pages in the background [LM]
+;; n
+[HKLM\SOFTWARE\Policies\Microsoft\MicrosoftEdge\TabPreloader]
+;; "AllowTabPreloading"=dword:00000000
+"AllowTabPreloading"=-
+
+;; Disable Microsoft Edge Launch in the background [LM]
+;; y
+[HKLM\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main]
+"AllowPrelaunch"=dword:00000000
+
+
+;; ============= Microsoft Office ============= ;;
+
+
+;; Disable telemetry [CU]
+;; y
+[HKCU\Software\Microsoft\Office\Common\ClientTelemetry]
+"DisableTelemetry"=dword:00000001
+[HKLM\Software\Microsoft\Office\Common\ClientTelemetry]
+"DisableTelemetry"=dword:00000001
+
+
+;; Disable diagnostic data submission [CU]
+;; y
+[HKCU\Software\Policies\Microsoft\Office\Common\ClientTelemetry]
+"SendTelemetry"=dword:00000003
+[HKLM\Software\Policies\Microsoft\Office\Common\ClientTelemetry]
+"SendTelemetry"=dword:00000003
+
+
+;; Disable participation in the Customer Experience Improvement Program [CU]
+;; y
+[HKCU\Software\Policies\Microsoft\Office\16.0\Common]
+"QMEnable"=dword:00000000
+[HKLM\Software\Policies\Microsoft\Office\16.0\Common]
+"QMEnable"=dword:00000000
+
+
+;; Disable display of LinkedIn Information [CU]
+;; y
+[HKCU\Software\Policies\Microsoft\Office\16.0\Common]
+"LinkedIn"=dword:00000000
+[HKLM\Software\Policies\Microsoft\Office\16.0\Common]
+"LinkedIn"=dword:00000000
+
+
+;; Disable inline text prediction in mails [CU]
+;; y
+[HKCU\Software\Microsoft\Office\16.0\Common\MailSettings]
+"InlineTextPrediction"=dword:00000001
+;; "InlineTextPrediction"=dword:00000000
+[HKLM\Software\Microsoft\Office\16.0\Common\MailSettings]
+"InlineTextPrediction"=dword:00000001
+;; "InlineTextPrediction"=dword:00000000
+
+
+;; Disable logging for Telementry Agent [CU]
+;; y
+[HKCU\Software\Policies\Microsoft\Office\16.0\OSM]
+"Enablelogging"=dword:00000000
+[HKLM\Software\Policies\Microsoft\Office\16.0\OSM]
+"Enablelogging"=dword:00000000
+
+
+;; Disable upload of data for Telementry Agent [CU]
+;; y
+[HKCU\Software\Policies\Microsoft\Office\16.0\OSM]
+"EnableUpload"=dword:00000000
+[HKLM\Software\Policies\Microsoft\Office\16.0\OSM]
+"EnableUpload"=dword:00000000
+
+
+;; Obfuscate file names when uploading telementry data [CU]
+;; y
+[HKCU\Software\Policies\Microsoft\Office\16.0\OSM]
+"EnableFileObfuscation"=dword:00000001
+[HKLM\Software\Policies\Microsoft\Office\16.0\OSM]
+"EnableFileObfuscation"=dword:00000001
+
+
+;; Disable surveys [CU]
+;; y
+[HKCU\Software\Policies\Microsoft\Office\16.0\Common\Feedback]
+"SurveyEnabled"=dword:00000000
+[HKLM\Software\Policies\Microsoft\Office\16.0\Common\Feedback]
+"SurveyEnabled"=dword:00000000
+
+
+;; Disable feedback to Microsoft [CU]
+;; y
+[HKCU\Software\Policies\Microsoft\Office\16.0\Common\Feedback]
+"Enabled"=dword:00000000
+;; "Enabled"=-
+[HKLM\Software\Policies\Microsoft\Office\16.0\Common\Feedback]
+"Enabled"=dword:00000000
+;; "Enabled"=-
+
+
+;; Disable Microsoft's feedback tracking [CU]
+;; y
+[HKCU\Software\Policies\Microsoft\Office\16.0\Common\Feedback]
+"IncludeEmail"=dword:00000000
+;; "IncludeEmail"=-
+[HKLM\Software\Policies\Microsoft\Office\16.0\Common\Feedback]
+"IncludeEmail"=dword:00000000
+;; "IncludeEmail"=-
+
+
+;; Disable automatic receipt of updates [CU]
+;; y
+[HKCU\Software\Policies\Microsoft\Office\16.0\Common]
+"UpdateReliabilityData"=dword:00000000
+;; "UpdateReliabilityData"=-
+[HKLM\Software\Policies\Microsoft\Office\16.0\Common]
+"UpdateReliabilityData"=dword:00000000
+;; "UpdateReliabilityData"=-
+
+
+;; Disable connected experiences in Office [CU]
+;; n
+[HKCU\Software\Policies\Microsoft\Office\16.0\Common\Privacy]
+;; "DisconnectedState"=dword:00000000
+"DisconnectedState"=-
+[HKLM\Software\Policies\Microsoft\Office\16.0\Common\Privacy]
+;; "DisconnectedState"=dword:00000000
+"DisconnectedState"=-
+
+
+;; Disable connected experiences with content analytics [CU]
+;; y
+[HKCU\Software\Policies\Microsoft\Office\16.0\Common\Privacy]
+"UserContentDisabled"=dword:00000002
+[HKLM\Software\Policies\Microsoft\Office\16.0\Common\Privacy]
+"UserContentDisabled"=dword:00000002
+
+
+;; Disable online content downloading for connected experiences [CU]
+;; n
+[HKCU\Software\Policies\Microsoft\Office\16.0\Common\Privacy]
+;; "DownloadContentDisabled"=dword:00000002
+"DownloadContentDisabled"=-
+[HKLM\Software\Policies\Microsoft\Office\16.0\Common\Privacy]
+;; "DownloadContentDisabled"=dword:00000002
+"DownloadContentDisabled"=-
+
+
+;; Disable optional connected experiences in Office [CU]
+;; n
+[HKCU\Software\Policies\Microsoft\Office\16.0\Common\Privacy]
+;; "ControllerConnectedServicesEnabled"=dword:00000002
+"ControllerConnectedServicesEnabled"=-
+[HKLM\Software\Policies\Microsoft\Office\16.0\Common\Privacy]
+;; "ControllerConnectedServicesEnabled"=dword:00000002
+"ControllerConnectedServicesEnabled"=-
+
+
+;; ============= Synchronization of Windows Settings ============= ;;
+
+
+;; Disable synchronization of all settings (if enabled below settings do not matter) [CU]
+;; n
+[HKCU\Software\Microsoft\Windows\CurrentVersion\SettingSync]
+;; "SyncPolicy"=dword:00000005
+"SyncPolicy"=dword:00000000
+[HKLM\Software\Microsoft\Windows\CurrentVersion\SettingSync]
+;; "SyncPolicy"=dword:00000005
+"SyncPolicy"=dword:00000000
+
+
+;; Disable synchronization of design settings [CU]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Personalization]
+;; "Enabled"=dword:00000000
+"Enabled"=dword:00000001
+[HKLM\Software\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Personalization]
+;; "Enabled"=dword:00000000
+"Enabled"=dword:00000001
+
+
+;; Disable synchronization of browser settings [CU]
+;; n
+[HKCU\Software\Microsoft\Windows\CurrentVersion\SettingSync\Groups\BrowserSettings]
+;; "Enabled"=dword:00000000
+"Enabled"=dword:00000001
+[HKLM\Software\Microsoft\Windows\CurrentVersion\SettingSync\Groups\BrowserSettings]
+;; "Enabled"=dword:00000000
+"Enabled"=dword:00000001
+
+
+;; Disable synchronization credentials (passwords) [CU]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Credentials]
+"Enabled"=dword:00000000
+[HKLM\Software\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Credentials]
+"Enabled"=dword:00000000
+
+
+;; Disable synchronization of language settings [CU]
+;; n
+[HKCU\Software\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Language]
+;; "Enabled"=dword:00000000
+"Enabled"=dword:00000001
+[HKLM\Software\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Language]
+;; "Enabled"=dword:00000000
+"Enabled"=dword:00000001
+
+
+;; Disable synchronization of accessibility settings [CU]
+;; n
+[HKCU\Software\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Accessibility]
+;; "Enabled"=dword:00000000
+"Enabled"=dword:00000001
+[HKLM\Software\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Accessibility]
+;; "Enabled"=dword:00000000
+"Enabled"=dword:00000001
+
+
+;; Disable synchronization of advanced Windows settings [CU]
+;; n
+[HKCU\Software\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Windows]
+;; "Enabled"=dword:00000000
+"Enabled"=dword:00000001
+[HKLM\Software\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Windows]
+;; "Enabled"=dword:00000000
+"Enabled"=dword:00000001
+
+
+;; ============= Cortana (Personal Assistant) ============= ;;
+
+
+;; Disable and reset Cortana [CU]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\Windows Search]
+"CortanaConsent"=dword:00000000
+[HKLM\Software\Microsoft\Windows\CurrentVersion\Windows Search]
+"CortanaConsent"=dword:00000000
+
+
+;; Disable Input Personalization [CU]
+;; y
+[HKCU\Software\Microsoft\Personalization\Settings]
+"AcceptedPrivacyPolicy"=dword:00000000
+[HKCU\Software\Microsoft\InputPersonalization]
+"RestrictImplicitInkCollection"=dword:00000001
+"RestrictImplicitTextCollection"=dword:00000001
+[HKCU\Software\Microsoft\InputPersonalization\TrainedDataStore]
+"HarvestContacts"=dword:00000000
+[HKLM\Software\Microsoft\Personalization\Settings]
+"AcceptedPrivacyPolicy"=dword:00000000
+[HKLM\Software\Microsoft\InputPersonalization]
+"RestrictImplicitInkCollection"=dword:00000001
+"RestrictImplicitTextCollection"=dword:00000001
+[HKLM\Software\Microsoft\InputPersonalization\TrainedDataStore]
+"HarvestContacts"=dword:00000000
+
+
+;; -----------------------------------------------------;;
+;; Disable online speech recognition [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\InputPersonalization]
+"AllowInputPersonalization"=dword:00000000
+[HKLM\SOFTWARE\Policies\Microsoft\InputPersonalization]
+"AllowInputPersonalization"=dword:00000000
+
+;; Disable display web results in search [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
 "ConnectedSearchUseWeb"=dword:00000000
-"ConnectedSearchUseWebOverMeteredConnections"=dword:00000000
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
+"ConnectedSearchUseWeb"=dword:00000000
+
+;; Disable download and updates of speech recognition and speech synthesis models [LM]
+;; y
+[HKCU\SOFTWARE\Microsoft\Speech_OneCore\Preferences]
+"ModelDownloadAllowed"=dword:00000000
+[HKLM\SOFTWARE\Microsoft\Speech_OneCore\Preferences]
+"ModelDownloadAllowed"=dword:00000000
+
+;; Cortana and search are disallowed to use location [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
+"AllowSearchToUseLocation"=dword:00000000
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
+"AllowSearchToUseLocation"=dword:00000000
+
+;; Disable Cortana above lock screen [LM]
+;; n // for testing I enabled this.
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
+;; "AllowCortanaAboveLock"=dword:00000000
+"AllowCortanaAboveLock"=dword:00000001
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
+;; "AllowCortanaAboveLock"=dword:00000000
+"AllowCortanaAboveLock"=dword:00000001
+
+;; Disable cloud search [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
+"AllowCloudSearch"=dword:00000000
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
+"AllowCloudSearch"=dword:00000000
+
+;; Disable web search from Windows Desktop Search [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
+"DisableWebSearch"=dword:00000001
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
 "DisableWebSearch"=dword:00000001
 
-;; increase taskbar transparency level - Disable instead
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"UseOLEDTaskbarTransparency"=dword:00000000
 
-;; Open Last Active Window - Switch t0 last active window in taskbar when clicking on the icons. Very useful
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"LastActiveClick"=dword:00000001
-
-;; Taskbar Visible with Touch Keyboard
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\StigRegKey\Typing\TaskbarAvoidanceEnabled]
-"TaskbarAvoidanceEnabled"=dword:00000001
- 
-;; Wallpaper Quality - imported jpegs quality 100% instead of 85% (hexdecimal)
-[HKEY_CURRENT_USER\Control Panel\Desktop]
-"JPEGImportQuality"=dword:00000064
-;; ========================================================= Context Menu ======================================================== ;;
-;; "Install Command (Context Menu) for CAB Files"
-[HKEY_CLASSES_ROOT\CABFolder\Shell\runas]
-@="Install this update"
-"HasLUAShield"=""
-"NeverDefault"=""
-[HKEY_CLASSES_ROOT\CABFolder\Shell\runas\command]
-@="cmd /k dism /online /add-package /packagepath:\"%1\""
-
-;; Remove Default Context Menu Extries
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
-;; Scan with Windows Defender
-"{09A47860-11B0-4DA5-AFA5-26D86198A780}"=""
-;; Cast to Device
-"{7AD84985-87B4-4a16-BE58-8B72A5B390F7}"=""
-;; Extract All (Default Win10 unzip)
-"{b8cdcb65-b1bf-4b42-9428-1dfdb7ee92af}"=""
-;; Give Access To
-"{f81e9010-6ea4-11ce-a7ff-00aa003ca9f6}"=""
-;; Share
-"{e2bf9676-5f8f-435c-97eb-11607a5bedf7}"=""
-;; Restore Previous Versions
-"{596AB062-B4D2-4215-9F74-E9109B0A8153}"=""
-;; Troubleshoot Compatibility
-"{1d27f844-3a1f-4410-85ac-14651078412d}"=""
-;; Open in Windows Terminal
-"{9F156763-7844-4DC4-B2B1-901F640F5155}"=""
-;; Open in Windows Terminal Again
-"{02DB545A-3E20-46DE-83A5-1329B1E88B6B}"=""
-;; remove paint3d context menus
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.bmp\Shell\3D Edit]
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.jpeg\Shell\3D Edit]
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.jpe\Shell\3D Edit]
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.jpg\Shell\3D Edit]
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.jpg\Shell\3D Edit]
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.png\Shell\3D Edit]
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.gif\Shell\3D Edit]
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.tif\Shell\3D Edit]
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.tiff\Shell\3D Edit]
-;; Burn Disc Image context menu
-[HKEY_CLASSES_ROOT\Windows.IsoFile\shell\burn]
-"ProgrammaticAccessOnly"=""
-;; Pin To Start
-[HKEY_CLASSES_ROOT\exefile\shellex\ContextMenuHandlers\PintoStartScreen]
-@=""
-;; Pin To Taskbar
-[-HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers\{90AA3A4E-1CBA-4233-B8BB-535773D48449}]
-;; Include in Library (if library is enabled)
-[-HKEY_CLASSES_ROOT\Folder\ShellEx\ContextMenuHandlers\Library Location]
-;; Create a New Video [default for image (*.PNG, *.JPG, etc) files]
-[HKEY_CLASSES_ROOT\AppX43hnxtbyyps62jhe9sqpdzxn1790zetc\Shell\ShellCreateVideo]
-"ProgrammaticAccessOnly"=""
-[HKEY_CLASSES_ROOT\AppXk0g4vb8gvt7b93tg50ybcy892pge6jmt\Shell\ShellCreateVideo]
-"ProgrammaticAccessOnly"=""
-;; Remove Rotate Image for most popular extentions
-[-HKEY_CLASSES_ROOT\SystemFileAssociations\.bmp\ShellEx\ContextMenuHandlers\ShellImagePreview]
-[-HKEY_CLASSES_ROOT\SystemFileAssociations\.dib\ShellEx\ContextMenuHandlers\ShellImagePreview]
-[-HKEY_CLASSES_ROOT\SystemFileAssociations\.gif\ShellEx\ContextMenuHandlers\ShellImagePreview]
-[-HKEY_CLASSES_ROOT\SystemFileAssociations\.heic\ShellEx\ContextMenuHandlers\ShellImagePreview]
-[-HKEY_CLASSES_ROOT\SystemFileAssociations\.heif\ShellEx\ContextMenuHandlers\ShellImagePreview]
-[-HKEY_CLASSES_ROOT\SystemFileAssociations\.ico\ShellEx\ContextMenuHandlers\ShellImagePreview]
-[-HKEY_CLASSES_ROOT\SystemFileAssociations\.jfif\ShellEx\ContextMenuHandlers\ShellImagePreview]
-[-HKEY_CLASSES_ROOT\SystemFileAssociations\.jpe\ShellEx\ContextMenuHandlers\ShellImagePreview]
-[-HKEY_CLASSES_ROOT\SystemFileAssociations\.jpeg\ShellEx\ContextMenuHandlers\ShellImagePreview]
-[-HKEY_CLASSES_ROOT\SystemFileAssociations\.jpg\ShellEx\ContextMenuHandlers\ShellImagePreview]
-[-HKEY_CLASSES_ROOT\SystemFileAssociations\.png\ShellEx\ContextMenuHandlers\ShellImagePreview]
-[-HKEY_CLASSES_ROOT\SystemFileAssociations\.rle\ShellEx\ContextMenuHandlers\ShellImagePreview]
-[-HKEY_CLASSES_ROOT\SystemFileAssociations\.tif\ShellEx\ContextMenuHandlers\ShellImagePreview]
-[-HKEY_CLASSES_ROOT\SystemFileAssociations\.tiff\ShellEx\ContextMenuHandlers\ShellImagePreview]
-[-HKEY_CLASSES_ROOT\SystemFileAssociations\.webp\ShellEx\ContextMenuHandlers\ShellImagePreview]
-;; File Ownership EFS
-[HKEY_CLASSES_ROOT\*\shell\UpdateEncryptionSettingsWork]
-"ProgrammaticAccessOnly"=""
-[HKEY_CLASSES_ROOT\Directory\shell\UpdateEncryptionSettings]
-"ProgrammaticAccessOnly"=""
-;; ======================================================== Microsoft Edge ======================================================= ;;
-;; All Microsoft Edge Stuff in custom.reg
-;; ================================================== Settings and Control Panel ================================================= ;;
-;; not added Add Personalization
-;; not added Add Windows Update - to control panel
-
-;; Disable Online and Video Tips in Settings
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
-"AllowOnlineTips"=dword:00000000
-
-;; not added Hide Pages from settings
-
-;; Insider Page - hide from settings
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsSelfHost\UI\Visibility]
-"HideInsiderPage"=dword:00000000
-;; ======================================================== File Explorer ======================================================== ;;
-;; "Do this for all Curerrent Items" Checkbox
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager]
-"ConfirmationCheckBoxDoForAll"=dword:00000001
-
-;; deciced that there was no need for this
-;; Automatic Folder Type Discovery - changes how the folder is formatted based on what is inside the folder
-;; ;; disable - breaks quick access
-;; ;; [-HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags]
-;; ;; [HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
-;; ;; "FolderType"="NotSpecified"
-;; ;; reset to defaults
-;; [-HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders]
-
-;; not added Change Jumkplist Item Number
-
-;; Classic Folder Options - Folder Options are in custom.reg
-
-;; not added Change Jumkplist Item Number
-;; not added Compressed Overlay Icon
-
-;; if you like cool icons use winero to change
-;; not added Customize Libraries Item
-;; not added Customize Quick Access Item
-;; not added Customize This PC Folders
+;; ============= User Behavior ============= ;;
 
 
-;; not added Default Drag-n-Drop Action
-
-;; Disable Jump Lists
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"Start_TrackDocs"=dword:00000000
-
-;; Disable Search History
-[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer]
-"DisableSearchBoxSuggestions"=dword:00000001
-;; also remove images for tiles on exit
-"ClearTilesOnExit"=dword:00000001
-
-;; not added Drag-n-Drop Sensitivity
-;; not added Drive Letters
-;; Enable Auto Completion - custom.reg
-;; not added Enable Classic Search - not needed because windows fixed this kinda
-;; not added Enable Recycle Bin for Removable Drives
-
-;; File Explorer Starting Folder
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-;; 1 – File Explorer opens to This PC.
-;; 2 – File Explorer opens to Quick access.
-;; 3 – File Explorer opens to the Downloads folder. The value data of 3 is not configurable through the user interface and can be set only in the Registry.
-;; 4-  File Explorer opens to OneDrive.
-"LaunchTo"=dword:00000002
-
-;; not added Folder View Number to Remeber - can't go below 5000
-;; not added Hide Drives
-;; not added Icon Cache Size - default 512 kb
-;; not added Navigation Pane - Custom Items
-;; not added Navigation Pane - Default Items
-;; not added Thumbnail Border Shadow
-;; ========================================================== Network ========================================================== ;;
-;; Administrative Shares
-;; If you disable, as others already found out the hard way, it breaks things because a lot of applications and services require those shares
-
-;; not added Export Specific Firewall Rules
-
-;; ;; Network Drives over UAC - not needed
-;; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
-;; "EnableLinkedConnections"=dword:00000001
-
-;; RDP Port - 3389 (default)
-[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp]
-"PortNumber"=dword:00000d3d
-
-;; Reset Network Data Usage - moved to winero.bat
-
-;; TCP/IP Router - Forward traffic through vpn
-"IPEnableRouter"=dword:00000001
-;; ========================================================== User Accounts ========================================================== ;;
-;; not added Built-in Administrator
-;; not added Disable UAC
-;; not added Enable UAC for Built-in Administrator
-;; ========================================================== Windows Defender ========================================================== ;;
-;; not added - disable windows defender
-;; need to disable tamper protection first before interacting with these settings.
-;; Set it to "0" to disable Tamper Protection or "5" to enable Tamper Protection
-;; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\Features]
-;; "TamperProtection"=dword:00000005
+;; Disable the use of diagnostic data for a tailor-made user experience [CU]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\Privacy]
+"TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
+[HKLM\Software\Microsoft\Windows\CurrentVersion\Privacy]
+"TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
 
 
-;; Protection Against UnWanted Software (PUPs)
-[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows Defender\MpEngine]
-"MpEnablePus"=dword:00000001
-
-;; Enable Windows Defender
-[HKLM\Software\Microsoft\Windows\CurrentVersion\Run]
-"SecurityHealth"="%windir%\\system32\\SecurityHealthSystray.exe"
-;; "SecurityHealth"=-
-;; ========================================================== Windows Apps ========================================================== ;;
-;; Auto Update Store Apps
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore]
-"AutoDownload"=dword:00000002
-
-;; Disable Cortana
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
-"AllowSearchToUseLocation"=dword:00000000
-"DisableWebSearch"=dword:00000001
-"ConnectedSearchUseWeb"=dword:00000000
-"AllowCloudSearch"=dword:00000000
-"AllowCortanaAboveLock"=dword:00000000
-"AllowCortana"=dword:00000000
-"ConnectedSearchUseWebOverMeteredConnections"=dword:00000000
-
-;; Disable Window Ink
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsInkWorkspace]
-"AllowWindowsInkWorkspace"=dword:00000000
-
-;; Notepad Unix Line Endings Support
-[HKEY_CURRENT_USER\Software\Microsoft\Notepad]
-"fWindowsOnlyEOL"=dword:00000000
-"fPasteOriginalEOL"=dword:00000001
-"fReverse"=dword:00000000
-"fMatchCase"=dword:00000000
-"searchString"=""
-"replaceString"=""
-"fWrap"=dword:00000001
-"StatusBar"=dword:00000001
-"fWrapAround"=dword:00000000
-;; ========================================================== Power and Battery ========================================================== ;;
-;; Battery Flyout - 0 new flyout, 1 old flyout
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ImmersiveShell]
-"UseWin32BatteryFlyout"=dword:00000000
-
-;; Battery Life Extimated Time - Enables in Flyout and Tooltip
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power]
-"EnergyEstimationEnabled"=dword:00000001
-"EnergyEstimationDisabled"=-
-"UserBatteryDischargeEstimator"=-
-
-;; Default Action for Shutdown Dialog
-;; 1 "Sign out"
-;; 2 "Shut down"
-;; 4 "Restart"
-;; 16 "Sleep"
-;; 64 "Hibernate"
-;; 256 "Switch user"
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"Start_PowerButtonAction"=dword:00000002
-
-;; not added Hibernation Options - not added because "reduced hibernation" sucks
-
-;; Power Throttling - moved to config/power.reg or something; will enable if desktop and disable if laptop.
-
-;; not added Require a Passowrd on Wakeup - default is off
-;; ========================================================== Privacy ========================================================== ;;
-;; not added Disable Password Reveal Button
-;; Disable Telemetry
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+;; -----------------------------------------------------;;
+;; Disable application telemetry [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
 "AllowTelemetry"=dword:00000000
-"LimitDiagnosticLogCollection"=dword:00000001
-"DisableOneSettingsDownloads"=dword:00000001
-"DoNotShowFeedbackNotifications"=dword:00000001
-;; ========================================================== Shortcuts ========================================================== ;;
-;; not added Classic Shutdown Shortcut
-;; Disable “- Shortcut” text for Shortcuts
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
-"link"=hex:1e,00,00,00
+;; "AllowTelemetry"=-
+[HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection]
+"AllowTelemetry"=dword:00000000
+;; "AllowTelemetry"=dword:00000003
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\AppCompat]
+"AITEnable"=dword:00000000
+;; "AITEnable"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"AllowTelemetry"=dword:00000000
+;; "AllowTelemetry"=-
+[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection]
+"AllowTelemetry"=dword:00000000
+;; "AllowTelemetry"=dword:00000003
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\AppCompat]
+"AITEnable"=dword:00000000
+;; "AITEnable"=-
 
-;; not added Elevated Shortcut
-;; not added SafeMode Shortcuts
-;; not added Screen Snip Shortcuts
-;; not added Settings Page Shortcuts
-;; not added Shell Folder (CLSID) Shortcut
-;; not added Shortcut Arrow
-;; not added Shortcut for PS1 File
-;; not added Shutdown Shortcuts
-;; =============================================================================================================================== ;;
+
+;; Disable diagnostic data from customizing user experiences for the whole machine [LM]
+;; y
+[HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Privacy]
+"TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
+[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Privacy]
+"TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
+
+
+;; Disable diagnostic log collection [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"LimitDiagnosticLogCollection"=dword:00000001
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"LimitDiagnosticLogCollection"=dword:00000001
+
+
+;; Disable downloading of OneSettings configuration settings [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"DisableOneSettingsDownloads"=dword:00000001
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"DisableOneSettingsDownloads"=dword:00000001
+
+
+;; ============= Windows Explorer ============= ;;
+
+
+;; Disable occassionally showing app suggestions in start menu [CU]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"SystemPaneSuggestionsEnabled"=dword:00000000
+;; "SystemPaneSuggestionsEnabled"=dword:00000001
+[HKLM\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"SystemPaneSuggestionsEnabled"=dword:00000000
+;; "SystemPaneSuggestionsEnabled"=dword:00000001
+
+
+;; Do not show recently Opened items in Jump Lists on "Start" or on the taskbar (right menu for explorer icon on taskbar) [CU]
+[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;; y
+"Start_TrackDocs"=dword:00000000
+;; "Start_TrackDocs"=dword:00000001
+[HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_TrackDocs"=dword:00000000
+;; "Start_TrackDocs"=dword:00000001
+
+
+;; Disable ads in Windows Explorer/Onedrive [CU]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowSyncProviderNotifications"=dword:00000000
+;; "ShowSyncProviderNotifications"=dword:00000001
+[HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowSyncProviderNotifications"=dword:00000000
+;; "ShowSyncProviderNotifications"=dword:00000001
+
+
+;; -----------------------------------------------------;;
+;; Disable Onedrive access to network before login [LM]
+;; y
+[HKLM\SOFTWARE\Microsoft\OneDrive]
+"PreventNetworkTrafficPreUserSignIn"=dword:00000001
+;; "PreventNetworkTrafficPreUserSignIn"=dword:00000000
+
+
+;; Disable Microsoft Onedrive [LM]
+;; n
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\OneDrive]
+;; "DisableFileSyncNGSC"=dword:00000001
+"DisableFileSyncNGSC"=dword:00000000
+
+
+;; ============= Lock Screen ============= ;;
+;; note: there is a wierd modification of RotatingLockScreenEnabled that gets enabled when using the below settings in O&O.
+
+
+;; Disable Windows Spotlight [CU]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
+"DisableWindowsSpotlightFeatures"=dword:00000001
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
+"DisableWindowsSpotlightFeatures"=dword:00000001
+
+
+;; Disable fun facts, tips, tricks and more on your lock screen [CU]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"SubscribedContent-338387Enabled"=dword:00000000
+[HKLM\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"SubscribedContent-338387Enabled"=dword:00000000
+
+
+;; Disable notifications on the lock screen [CU]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings]
+"NOC_GLOBAL_SETTING_ALLOW_TOASTS_ABOVE_LOCK"=dword:00000000
+[HKLM\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings]
+"NOC_GLOBAL_SETTING_ALLOW_TOASTS_ABOVE_LOCK"=dword:00000000
+
+
+;; ============= Miscellaneous ============= ;;
+
+
+;; Disable feedback reminders [CU and LM]
+;; y
+[HKCU\Software\Microsoft\Siuf\Rules]
+"NumberOfSIUFInPeriod"=dword:00000000
+"PeriodInNanoSeconds"=dword:00000000
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"DoNotShowFeedbackNotifications"=dword:00000001
+[HKLM\Software\Microsoft\Siuf\Rules]
+"NumberOfSIUFInPeriod"=dword:00000000
+"PeriodInNanoSeconds"=dword:00000000
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"DoNotShowFeedbackNotifications"=dword:00000001
+
+
+;; Disable automatic installation of recommended Windows Store Apps [CU]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"SilentInstalledAppsEnabled"=dword:00000000
+;; "SilentInstalledAppsEnabled"=dword:00000001
+[HKLM\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"SilentInstalledAppsEnabled"=dword:00000000
+;; "SilentInstalledAppsEnabled"=dword:00000001
+
+
+;; Disable tips, tricks, and suggestions while using Windows [CU]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"SoftLandingEnabled"=dword:00000000
+;; "SoftLandingEnabled"=dword:00000001
+[HKLM\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"SoftLandingEnabled"=dword:00000000
+;; "SoftLandingEnabled"=dword:00000001
+
+
+;; Disable Windows Media Player Diagnostics [CU]
+;; y
+[HKCU\Software\Microsoft\MediaPlayer\Preferences]
+"UsageTracking"=dword:00000000
+;; "UsageTracking"=dword:00000001
+[HKLM\Software\Microsoft\MediaPlayer\Preferences]
+"UsageTracking"=dword:00000000
+;; "UsageTracking"=dword:00000001
+
+
+;; Disable extendsion of Windows Search with Bing [CU]
+;; y
+[HKCU\Software\Policies\Microsoft\Windows\Explorer]
+"DisableSearchBoxSuggestions"=dword:00000000
+[HKLM\Software\Policies\Microsoft\Windows\Explorer]
+"DisableSearchBoxSuggestions"=dword:00000000
+
+
+;; Disable People icon in the taskbar [CU]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People]
+"PeopleBand"=dword:00000000
+;; "PeopleBand"=dword:00000002
+[HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People]
+"PeopleBand"=dword:00000000
+;; "PeopleBand"=dword:00000002
+
+
+;; Disable search box in the taskbar [CU]
+;; n
+[HKCU\Software\Microsoft\Windows\CurrentVersion\Search]
+;; "SearchboxTaskbarMode"=dword:00000000
+"SearchboxTaskbarMode"=dword:00000002
+[HKLM\Software\Microsoft\Windows\CurrentVersion\Search]
+;; "SearchboxTaskbarMode"=dword:00000000
+"SearchboxTaskbarMode"=dword:00000002
+
+
+;; Disable "Meet now" in taskbar [CU and LM]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"HideSCAMeetNow"=dword:00000001
+;; "HideSCAMeetNow"=dword:00000000
+[HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"HideSCAMeetNow"=dword:00000001
+;; "HideSCAMeetNow"=dword:00000000
+
+
+;; Disable news and interests in the taskbar [CU and LM]
+;; y
+[HKCU\Software\Microsoft\Windows\CurrentVersion\Feeds]
+"ShellFeedsTaskbarViewMode"=dword:00000002
+;; "ShellFeedsTaskbarViewMode"=dword:00000000
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\Windows Feeds]
+"EnableFeeds"=dword:00000000
+[HKLM\Software\Microsoft\Windows\CurrentVersion\Feeds]
+"ShellFeedsTaskbarViewMode"=dword:00000002
+;; "ShellFeedsTaskbarViewMode"=dword:00000000
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Feeds]
+"EnableFeeds"=dword:00000000
+
+
+;; -----------------------------------------------------;;
+;; Disable Network Activity Status Indicator (do not enable) [LM]
+;; n
+[HKCU\System\CurrentControlSet\Services\NlaSvc\Parameters\Internet]
+;; "EnableActiveProbing"=dword:00000000
+"EnableActiveProbing"=dword:00000001
+[HKLM\System\CurrentControlSet\Services\NlaSvc\Parameters\Internet]
+;; "EnableActiveProbing"=dword:00000000
+"EnableActiveProbing"=dword:00000001
+
+
+;; Disable installation of PC Health Check [LM]
+;; y
+[HKCU\SOFTWARE\Microsoft\PCHC]
+"PreviousUninstall"=dword:00000001
+;; "PreviousUninstall"=-
+[HKLM\SOFTWARE\Microsoft\PCHC]
+"PreviousUninstall"=dword:00000001
+;; "PreviousUninstall"=-
+
+
+;; Disable Key Management Service Online Activation [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform]
+"NoGenTicket"=dword:00000001
+[HKLM\SOFTWARE\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform]
+"NoGenTicket"=dword:00000001
+
+
+;; Disable automatic download and update of map data (if enabled, maps will not be updated) [LM]
+;; n
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\Maps]
+"AutoDownloadAndUpdateMapData"=dword:00000000
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\Maps]
+"AutoDownloadAndUpdateMapData"=dword:00000000
+
+
+;; Disable unsolicited network traffic on the offline maps settings page (if enabled prevents offline maps from functioning) [LM]
+;; n
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\Maps]
+;; "AllowUntriggeredNetworkTrafficOnSettingsPage"=dword:00000000
+"AllowUntriggeredNetworkTrafficOnSettingsPage"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\Maps]
+;; "AllowUntriggeredNetworkTrafficOnSettingsPage"=dword:00000000
+"AllowUntriggeredNetworkTrafficOnSettingsPage"=-
+
+
+;; ============= Location Services ============= ;;
+;; -----------------------------------------------------;;
+
+
+;; Disable sensors for locating the system and it's orientation [LM]
+;; n
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors]
+;; "DisableSensors"=dword:00000001
+"DisableSensors"=dword:00000000
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors]
+;; "DisableSensors"=dword:00000001
+"DisableSensors"=dword:00000000
+
+
+;; Disable functionality to locate the system [LM]
+;; y
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors]
+"DisableLocation"=dword:00000001
+"DisableWindowsLocationProvider"=dword:00000001
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors]
+"DisableLocation"=dword:00000001
+"DisableWindowsLocationProvider"=dword:00000001
+
+
+;; Disable Windows Geolocation Service [LM]
+;; y
+[HKCU\System\CurrentControlSet\Services\lfsvc\Service\Configuration]
+"Status"=dword:00000000
+;; "Status"=dword:00000001
+[HKCU\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Sensor\Overrides\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}]
+"SensorPermissionState"=dword:00000000
+;; "SensorPermissionState"=dword:00000001
+[HKLM\System\CurrentControlSet\Services\lfsvc\Service\Configuration]
+"Status"=dword:00000000
+;; "Status"=dword:00000001
+[HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Sensor\Overrides\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}]
+"SensorPermissionState"=dword:00000000
+;; "SensorPermissionState"=dword:00000001
+
+
+;; Disable scripting functionality to locate the system [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors]
+"DisableLocationScripting"=dword:00000001
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors]
+"DisableLocationScripting"=dword:00000001
+
+
+;; ============= Microsoft Defender and Microsoft SpyNet ============= ;;
+;; -----------------------------------------------------;;
+;; Disable Microsoft Spynet membership [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet]
+"SpyNetReporting"=dword:00000000
+[HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet]
+"SpyNetReporting"=dword:00000000
+
+
+;; Disable submitting data samples to Microsoft [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet]
+"SubmitSamplesConsent"=dword:00000002
+[HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet]
+"SubmitSamplesConsent"=dword:00000002
+
+
+;; Disable reporting of malware infection information [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\MRT]
+"DontReportInfectionInformation"=dword:00000001
+[HKLM\SOFTWARE\Policies\Microsoft\MRT]
+"DontReportInfectionInformation"=dword:00000001
+
+
+;; ============= Security ============= ;;
+;; -----------------------------------------------------;;
+;; Disable telementry [LM]
+;; y
+[HKCU\System\CurrentControlSet\Services\DiagTrack]
+"Start"=dword:00000004
+;; "Start"=dword:00000002
+[HKCU\System\CurrentControlSet\Services\dmwappushservice]
+"Start"=dword:00000004
+;; "Start"=dword:00000003
+[HKCU\System\CurrentControlSet\Control\WMI\Autologger\AutoLogger-Diagtrack-Listener]
+"Start"=dword:00000000
+;; "Start"=dword:00000001
+[HKLM\System\CurrentControlSet\Services\DiagTrack]
+"Start"=dword:00000004
+;; "Start"=dword:00000002
+[HKLM\System\CurrentControlSet\Services\dmwappushservice]
+"Start"=dword:00000004
+;; "Start"=dword:00000003
+[HKLM\System\CurrentControlSet\Control\WMI\Autologger\AutoLogger-Diagtrack-Listener]
+"Start"=dword:00000000
+;; "Start"=dword:00000001
+
+
+;; Disable user steps recorder [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\AppCompat]
+"DisableUAR"=dword:00000000
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\AppCompat]
+"DisableUAR"=dword:00000000
+
+
+;; Disable password reveal button (on login) [LM]
+;; n
+[HKCU\SOFTWARE\Policies\Microsoft\Windows\CredUI]
+;; "DisablePasswordReveal"=dword:00000000
+"DisablePasswordReveal"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\CredUI]
+;; "DisablePasswordReveal"=dword:00000000
+"DisablePasswordReveal"=-
+
+
+;; Disable Internet access of Windows media Digital Rights Management (DRM) [LM]
+;; y
+[HKCU\SOFTWARE\Policies\Microsoft\WMDRM]
+"DisableOnline"=dword:00000000
+[HKLM\SOFTWARE\Policies\Microsoft\WMDRM]
+"DisableOnline"=dword:00000000
+
+
+;; ============= Windows Update ============= ;;
+;; -----------------------------------------------------;;
+;; Disable updates to the speech recognition and speech synthesis modules [LM]
+;; y
+[HKLM\SOFTWARE\Policies\Microsoft\Speech]
+"AllowSpeechModelUpdate"=dword:00000000
+[HKLM\SOFTWARE\Policies\Microsoft\Speech]
+"AllowSpeechModelUpdate"=dword:00000000
+
+
+;; Disable Windows Update peer-to-peer [LM]
+;; y
+[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config]
+"DODownloadMode"=dword:00000000
+;; "DODownloadMode"=dword:00000003
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization]
+"DODownloadMode"=dword:00000000
+[HKCU\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization]
+"SystemSettingsDownloadMode"=dword:00000000
+[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config]
+"DODownloadMode"=dword:00000000
+;; "DODownloadMode"=dword:00000003
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization]
+"DODownloadMode"=dword:00000000
+[HKCU\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization]
+"SystemSettingsDownloadMode"=dword:00000000
+
+
+;; Disable automatic driver updates through Windows Update [LM]
+;; n
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+;; "ExcludeWUDriversInQualityUpdate"=dword:00000001
+"ExcludeWUDriversInQualityUpdate"=-
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+;; "ExcludeWUDriversInQualityUpdate"=dword:00000001
+"ExcludeWUDriversInQualityUpdate"=-
+
+
+;; Activate deferring of updates [LM]
+;; y
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+"DeferUpgrade"=dword:00000001
+;; 0-8, number of months to defer Feature Updates.
+"DeferUpgradePeriod"=dword:00000001
+;; 0-4, number of weeks to defer Quality Updates
+"DeferUpdatePeriod"=dword:00000004
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+"DeferUpgrade"=dword:00000001
+;; 0-8, number of months to defer Feature Updates.
+"DeferUpgradePeriod"=dword:00000001
+;; 0-4, number of weeks to defer Quality Updates
+"DeferUpdatePeriod"=dword:00000004
+
+
+;; Disable Windows Dynamic configuration and update rollouts [LM]
+;; y
+[HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\System]
+"AllowExperimentation"=dword:00000000
+;; "AllowExperimentation"=dword:00000001
+[HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\System]
+"AllowExperimentation"=dword:00000000
+;; "AllowExperimentation"=dword:00000001
+
+
+;; Disable autoamtic app updates through Windows Update (you can stil update apps through the microsoft store) [LM]
+;; n
+[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsStore\WindowsUpdate]
+"AutoDownload"=dword:00000002
+;; "AutoDownload"=dword:00000004
+[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsStore\WindowsUpdate]
+"AutoDownload"=dword:00000002
+;; "AutoDownload"=dword:00000004
+
+
+;; Disable autoamtic downloading manufactures' apps and icons for devices (I dont like how it downloads apps) [LM]
+;; y
+[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata]
+"PreventDeviceMetadataFromNetwork"=dword:00000001
+[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata]
+"PreventDeviceMetadataFromNetwork"=dword:00000001
+
+
+;; Disable Windows Updates for other products (other microsoft products like Microsoft Office) [LM]
+;; n
+[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Services\7971f918-a847-4430-9279-4a52d1efe18d]
+;; "RegisteredWithAU"=dword:00000000
+[HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Services\7971f918-a847-4430-9279-4a52d1efe18d]
+;; "RegisteredWithAU"=dword:00000000
+"RegisteredWithAU"=-
+
+
+;; Disable automatic windows Updates [LM]
+;; n
+[HKLM\System\CurrentControlSet\Services\wuauserv]
+;; "Start"=dword:00000004
+"Start"=dword:00000003
+[HKLM\System\CurrentControlSet\Services\wuauserv]
+;; "Start"=dword:00000004
+"Start"=dword:00000003
+
+
+;; ============= Custom stuff for windows update ================= ;;
+
+;; disable notification
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+"SetUpdateNotificationLevel"=dword:00000000
+[HKLM\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.WindowsUpdate.Notification]
+"Enabled"=dword:00000000
+
+;; Hide Windows Update Status Icon in taskbar
+[HKLM\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]
+"TrayIconVisibility"=dword:00000000
+
+;; no auto downloading/restarting
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+"NoAutoUpdate"=dword:00000000
+"NoAutoRebootWithLoggedOnUsers"=dword:00000001
+;; Notify before downloading updates (does not work on windows home edition)
+"AUOptions"=dword:00000002
+
+
+;; ----------------------------------------------------------------------------------------------- ;;
